@@ -28,27 +28,45 @@ SUPPORTING DATABASES
 It is recommended that the user acquire as many of the following sequence databases and associated codes as is feasible, although none are actually required to run the code. (You may specify "translate_only='true'" to do gene finding and stop at that point.) Databases are listed with at least one way of acquiring them, but there may be additional sources, and it is possible to substitute subsets of blast databases (e.g., a subset of the NCBI gene database inplace of Refseq Gene).
 
 NCBI virus genomes - ftp://ftp.ncbi.nlm.nih.gov/refseq/release/viral/ or https://www.ncbi.nlm.nih.gov/genome/viruses/viral.1.1.1.genomic.fna.gz
+
 NCBI accession2taxid file - ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/nucl_gb.accession2taxid.gz or https://www.ncbi.nlm.nih.gov/guide/taxonomy/nucl_gb.accession2taxid.gz
+
 NCBI Refseq Protein - download using blast+: /bin/update_blastdb.pl refseq_protein
+
 NCBI Refseq Gene - download using blast+: /bin/update_blastdb.pl refseqgene. This database contains primarily human sequences. To acquire bacterial gene sequences you may need to download them via http://ncbi.nlm.nih.gov/gene and process the data to generate a fasta data set.
+
 NCBI Swissprot - download using blast+: /bin/update_blastdb.pl swissprot
+
 NR - ftp://ftp.ncbi.nlm.nih.gov/nr/
+
 KEGG virus subset - (available by license) http://www.kegg.jp/kegg/download/
+
 KEGG associated files - T40000.pep, T40000.nuc, vg_enzyme.list, vg_genome.list, vg_ko.list, vg_ncbi-geneid.list, vg_ncbi-proteinid.list, vg_pfam.list, vg_rs.list, vg_tax.list, vg_uniprot.list
+
 Phantome protein fasta sequences - http://www.phantome.org/Downloads/phage_proteins_nnnnnnnnn.fasta
+
 pVOGs prepared database (pVOGs.faa) - included in PhATE distribution. This data set was derived by C. Zhou from the pVOGs fasta database. For use in PhATE, the sequence fasta headers have been modified to include the pVOG identifiers (all groups to which each sequence belongs). This re-formatting facilitates pVOG group identification and construction of the alignment-ready fasta files. Codes for reconstructing this modified data set are included in the PhATE distribution. Note that the pVOGs are not mutually exclusive, meaning that a sequence may have membership in more than one VOG group. The codes included in the phate distribution will combine identifiers that belong to a given sequence and list all the VOG identifiers in the fasta header. In this way, the pVOG fasta database used in PhATE is also non-redundant. See documentation in DatabasePrep/dbPrep_createPvogFastaFile.py for instructions how to update your local pVOGs data set for use in PhATE, but you can start with the pVOGs.faa file included in the PhATE distribution.
+
 For simplicity in configuring the locations of dependent databases in the phate_runPipeline.py driver script, it is suggested that the above databases be placed in a directory structure as follows: /Databases/ KEGG/ NCBI/ Virus_Genome/ Virus_Protein/ NR/ Phantome/ Refseq/ Protein/ Gene/ Swissprot/ pVOGs/
 
 SUPPORTING 3rd PARTY CODES
 
 BioPython - https://biopython.org/wiki/Download
+
 EMBOSS package - https://sourceforge.net/directory/os:mac/?q=EMBOSS
+
 Blast+ https://ncbi.nlm.nih.gov/blast
+
 GeneMarkS - http://exon.gatech.edu/Genemark/index.html (optional; available by license)
+
 Glimmer - https://ccb.jhu.edu/software/glimmer/ (optional)
+
 Prodigal - https://github.com/hyattpd/Prodigal (optional)
+
 PHANOTATE - https://github.com/deprekate/PHANOTATE
+
 jackhmmer - https://www.ebi.ac.uk/Tools/hmmer/search/jackhmmer
+
 HOW TO WRITE A CONFIGURATION FILE
 
 Locations of supporting databases and codes are to be specified in the file, multiPhate.py, according to their locations on your local system.
