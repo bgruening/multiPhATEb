@@ -15,11 +15,11 @@ PhATE is a fully automated computational pipeline for identifying and annotating
 
 HOW TO SET UP PHATE ON YOUR LOCAL MACHINE
 
-Place multiPhate.py and phate_runPipeline.py in your main execution "phate" directory. Create two subdirectories: PipelineInput/ and PipelineOutput/ (if not already existing in the distribution). Place your phage genome fasta files (genome1.fasta, genome2.fasta, etc.) into the PipelineInput/ subdirectory. Place your configuration file (multiPhate.config) in the main directory (same level as multiPhate.py)
+Place multiPhate.py and phate_runPipeline.py in your main execution "phate" directory. Create two subdirectories: PipelineInput/ and PipelineOutput/ (if not already existing in the distribution). Place your phage genome fasta files (genome1.fasta, genome2.fasta, etc.) into the PipelineInput/ subdirectory. Place your configuration file (multiPhate.config) in the main execution directory (same level as multiPhate.py)
 
-You will need to acquire one or more of the databases listed below under SUPPORING DATABASES (Phantome and pVOGs are included in the distribution), and the 3rd party codes listed under SUPPORTING 3rd PARTY CODES. You will need to acquire at least one of the supported gene finders, but it is recommended to run as many of the four gene finders as is feasible so that the results can be more meaningfully compared. You will need to specifiy the locations of the supporting data sets and codes in the multiPhATE config file (see multiPhate.config), and you will need to locate your genome file(s) to the PipelineInput directory. Place your configuration file at the top level (alongside phate_runPipeline.py).
+You will need to acquire one or more of the databases listed below under SUPPORING DATABASES (Phantome and pVOGs are included in the distribution), and the 3rd party codes listed under SUPPORTING 3rd PARTY CODES. You will need to acquire at least one of the supported gene finders, but it is recommended to run as many of the four gene finders as is feasible so that the results can be more meaningfully compared. You will need to specifiy the locations of the supporting data sets and codes in the multiPhATE config file (see multiPhate.config), and you will need to locate your genome file(s) to the PipelineInput/ subdirectory.
 
-You may up- or down-regulate verbosity in the multiPhate.config file, under "VERBOSITY". This includes an option to clean the (voluminous) raw blast and hmm search data from the output directories.
+You may up- or down-regulate verbosity in the multiPhate.config file, under "# VERBOSITY". This includes an option to clean the (voluminous) raw blast and hmm search data from the output directories.
 
 PIPELINE EXECUTION
 
