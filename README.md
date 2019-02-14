@@ -1,5 +1,7 @@
-# multiPhATE v.0.5
-/multiPhate_b/ - multiPhATE (beta version)
+# multiPhATEb v.0.5
+/multiPhate_b/ - multiPhATEb (beta version)
+
+DO NOT USE THIS CODE. MultiPhATEb is being prepared as a Conda package on the Bioconda channel. The code and accessory files in this repository are in flux. If you would like to use multiPhATE now, please download the code and accessory files from the following repository:  https://github.com/carolzhou/multiPhATE.git.  Thank you.
 
 This code was developed by Carol L. Ecale Zhou and Jeffrey Kimbrel at Lawrence Livermore National Laboratory.
 
