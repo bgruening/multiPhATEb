@@ -7,6 +7,6 @@ setup(name='multiPhate',
 	description='Phage annotation pipeline',
 	author='Carol Zhou',
 	author_email='zhou4@llnl.gov',
-	url='https://github.com/carolzhou/multiPhATE',
-	packages=[]
+	url='https://github.com/carolzhou/multiPhATEb',
+	packages=[],
 	)
