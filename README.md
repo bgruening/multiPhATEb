@@ -1,7 +1,7 @@
 # multiPhATEb v.0.5  Repository:  https://github.com/carolzhou/multiPhATEb.git
 /MultiPhate_b/ - multiPhATEb (beta version) - Conda package, bioconda channel
 
-This code was developed by Carol L. Ecale Zhou and Jeffrey Kimbrel at Lawrence Livermore National Laboratory.
+This code was developed by Carol L. Ecale Zhou and Jeffrey A. Kimbrel at Lawrence Livermore National Laboratory.
 
 THIS CODE IS COVERED BY THE BSD LICENSE. SEE INCLUDED FILE BSD-3.pdf FOR DETAILS.
 
@@ -15,7 +15,7 @@ PhATE is a fully automated computational pipeline for identifying and annotating
 
 HOW TO SET UP MULTI-PHATE ON YOUR LOCAL MACHINE
 
-First, create a working directory on your computer for running multiPhATE. Then, acquire the multiPhATE package. This can be done by installing the bioconda package via Conda. See instructions under CONDA INSTALLATION. 
+First, create a working directory on your computer for running multiPhATE. Then, acquire the multiPhATE package. This can be done by installing the multiPhATE package via Conda, from the bioconda channel. See instructions under CONDA INSTALLATION. 
 
 CONDA INSTALLATION
 
@@ -29,10 +29,12 @@ CONDA INSTALLATION
 3) Add the following channels:  
 
     $ conda --add channels defaults 
+
     $ conda --add channels conda-forge 
+
     $ conda --add channels bioconda 
 
-    WARNING: bioconda is supported on Unix/Linux and Mac operating systems, but so far not on PC.  If you are working on a PC, then you will instead need to install multiPhATE from the following repository:  https://github.com/carolzhou/multiPhATE.git (note the missing 'b' from the repository name).  Follow the instructions in that repository's README.md file. There will be more manual steps involved in the installation of multiPhATE from this alternate repository, since all of the dependent packages will need to be installed individually from the home website of each package.
+    WARNING: bioconda is supported on Linux and Mac operating systems, but so far not on PC.  If you are working on a PC, then you will instead need to install multiPhATE from the following repository:  https://github.com/carolzhou/multiPhATE.git (note the missing 'b' from the repository name).  Follow the instructions in that repository's README.md file. There will be more manual steps involved in the installation of multiPhATE from this alternate repository, since all of the dependent packages will need to be installed individually from the home website of each package.
 
 4) Create an environment for using multiPhATE; let's call it "multiphate":  $ conda create --name multiphate
 
@@ -44,7 +46,7 @@ CONDA INSTALLATION
 
     Then, install multiPhaTE:  $ conda install multiphate
 
-    The dependent packages that are also availble as Conda packages should come along with multiphate; these include, biopython, emboss, blast, glimmer, prodigal, hmmer, and trnascan-se. As of this writing, PHANOTATE is not available as a conda/bioconda package, but is included in the multiPhATE distribution (see ExternalCodes/ folder).
+    The dependent packages that are also available as Conda packages should come along with multiphate; these include, biopython, emboss, blast, glimmer, prodigal, hmmer, and trnascan-se. As of this writing, PHANOTATE is not available as a conda/bioconda package, but is included in the multiPhATE distribution (see ExternalCodes/ folder).
 
 7) When running multiPhATE within your multiphate Conda environment, the pipeline will use the version of python and the third party codes installed within the multiphate environment, so there should be no clashes with other versions of these packages that may be installed elsewhere on your system. When you are finished running multiPhATE, you may exit from the multiphate Conda environment:  $ source deactivate
 
