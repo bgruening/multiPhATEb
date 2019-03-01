@@ -1,9 +1,8 @@
-circleci/python
-circleci/trnascan_se
-jego/emboss
-biopython/biopython
-ncbi/blast
-yookuda/glimmer-3.02
-kduffy/prodigal
-ddiez/hmmer
+trnascan_se
+emboss
+biopython
+blast
+glimmer==3.02
+prodigal
+hmmer
 #
