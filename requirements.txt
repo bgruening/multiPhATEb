@@ -1,8 +1,9 @@
-trnascan_se>=2.0
-emboss>=6.0
-biopython
-blast>=2.7.1
-glimmer>=3.02
-prodigal>=2.6
-hmmer>=3.1b2
+circleci/python
+circleci/trnascan_se
+jego/emboss
+biopython/biopython
+ncbi/blast
+yookuda/glimmer-3.02
+kduffy/prodigal
+ddiez/hmmer
 #
