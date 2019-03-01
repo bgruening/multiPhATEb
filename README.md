@@ -30,9 +30,9 @@ CONDA INSTALLATION
 
     $ conda --add channels defaults 
 
-    $ conda --add channels conda-forge 
-
     $ conda --add channels bioconda 
+
+    $ conda --add channels conda-forge 
 
     WARNING: bioconda is supported on Linux and Mac operating systems, but so far not on PC.  If you are working on a PC, then you will instead need to install multiPhATE from the following repository:  https://github.com/carolzhou/multiPhATE.git (note the missing 'b' from the repository name).  Follow the instructions in that repository's README.md file. There will be more manual steps involved in the installation of multiPhATE from this alternate repository, since all of the dependent packages will need to be installed individually from the home website of each package.
 
