@@ -1,8 +1,8 @@
-trnascan_se
-emboss
+trnascan_se>=2.0
+emboss>=6.0
 biopython
-blast
-glimmer==3.02
-prodigal
-hmmer
+blast>=2.7.1
+glimmer>=3.02
+prodigal>=2.6
+hmmer>=3.1b2
 #
