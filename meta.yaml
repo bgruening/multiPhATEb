@@ -6,7 +6,7 @@ package:
   version: '{{ version }}' 
 
 source:
-  url: https://github.com/carolzhou/multiPhATEb.git/multiphate.tar.gz 
+  url: https://github.com/carolzhou/multiPhATEb/multiphate.tar.gz 
   sha256: '{{ sha256 }}' 
 
 build:
