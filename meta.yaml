@@ -34,7 +34,6 @@ test:
     - prodigal -v
     - jackhmmer -h
     - transeq --version
-    - python multiPhate.py usage
 
 about:
   home: https://github.com/carolzhou/multiPhATEb.git
