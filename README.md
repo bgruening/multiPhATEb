@@ -5,19 +5,19 @@ This code was developed by Carol L. Ecale Zhou and Jeffrey A. Kimbrel at Lawrenc
 
 THIS CODE IS COVERED BY THE BSD LICENSE. SEE INCLUDED FILE BSD-3.pdf FOR DETAILS.
 
-ABOUT THE MULTI-PHATE PIPELINE DRIVER
+###ABOUT THE MULTI-PHATE PIPELINE DRIVER
 
 multiPhATE is a throughput version of PhATE, which is described below. The multiPhate.py code is a command-line program that takes a single argument (hereafter referred to as, "multiPhate.config"; use sample.multiPhate.config as starting point) and uses it to generate a phate.config file (suitably named) for each genome being annotated. Then, multiPhate.py invokes the PhATE pipeline (via phate_runPipeline.py) for each genome.
 
-ABOUT THE PHATE PIPELINE
+###ABOUT THE PHATE PIPELINE
 
 PhATE is a fully automated computational pipeline for identifying and annotating phage genes in genome sequence. PhATE is written in Python 3.7, and runs on Linux and Mac operating systems. Code execution is controled by a configuration file, which can be tailored to run specific gene finders and to blast sequences against specific phage- and virus-centric data sets, in addition to more generic (genome, protein) data sets. PhATE runs at least one gene finding algorithm, then annotates the genome, gene, and protein sequences using blast and a set of fasta sequence databases, and uses an hmm search against the pVOG database. If more than one gene finder is run, PhATE will also provide a side-by-side comparison of the genes called by each gene caller. The user specifies the preferred gene caller, and the genes and proteins predicted by that caller are annotated using blast against the supporting databases. Classification of each protein sequence into a pVOG group is followed by generation of an alignment-ready fasta file. By convention, genome sequence files end with extension, ".fasta"; gene nucleotide fasta files end with, ".fnt", and cds amino-acid fasta files end with, ".faa".
 
-HOW TO SET UP MULTI-PHATE ON YOUR LOCAL MACHINE
+###HOW TO SET UP MULTI-PHATE ON YOUR LOCAL MACHINE
 
 First, create a working directory on your computer for running multiPhATE. Then, acquire the multiPhATE package. This can be done by installing the multiPhATE package via Conda, from the bioconda channel. See instructions under CONDA INSTALLATION. 
 
-CONDA INSTALLATION
+###CONDA INSTALLATION
 
 1) First, download and install miniconda3 for Python 3.x (https://conda.io/en/latest/miniconda.html). For more information about Conda, see https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html.  
 
@@ -28,13 +28,13 @@ CONDA INSTALLATION
 
 3) Add the following channels:  
 
+    ```bash
     $ conda --add channels defaults 
-
     $ conda --add channels bioconda 
-
     $ conda --add channels conda-forge 
+    ```
 
-    WARNING: bioconda is supported on Linux and Mac operating systems, but so far not on PC.  If you are working on a PC, then you will instead need to install multiPhATE from the following repository:  https://github.com/carolzhou/multiPhATE.git (note the missing 'b' from the repository name).  Follow the instructions in that repository's README.md file. There will be more manual steps involved in the installation of multiPhATE from this alternate repository, since all of the dependent packages will need to be installed individually from the home website of each package.
+    WARNING: bioconda is supported on Linux and Mac operating systems, but so far not on Windows.  If you are working on a Windows machine, then you will instead need to install multiPhATE from the following repository:  https://github.com/carolzhou/multiPhATE.git (note the missing 'b' from the repository name).  Follow the instructions in that repository's README.md file. There will be more manual steps involved in the installation of multiPhATE from this alternate repository, since all of the dependent packages will need to be installed individually from the home website of each package.
 
 4) Create an environment for using multiPhATE; let's call it "multiphate":  $ conda create --name multiphate
 
@@ -55,7 +55,7 @@ Now, be sure that multiPhate.py and phate_runPipeline.py and associated files an
 
 You will need to acquire one or more of the databases listed below under SUPPORING DATABASES (Phantome and pVOGs are included in the multiPhATE distribution, so it is possible to begin with just those), and the 3rd party codes listed under SUPPORTING 3rd PARTY CODES (if not already installed via Conda). You will need to acquire at least one of the supported gene finders, but it is recommended to run as many of the four gene finders as is feasible so that the results obtained from the gene finders can be more meaningfully compared. You will need to specifiy the locations of the supporting data sets and codes in the multiPhATE config file (see multiPhate.config), and you will need to locate your genome file(s) to the PipelineInput/ subdirectory. Once you have acquired the third-party codes and databases, you will be ready to configure the multiPhate.config file.
 
-HOW TO WRITE A CONFIGURATION FILE
+###HOW TO WRITE A CONFIGURATION FILE
 
 Summary:
 Availability and locations of supporting databases and codes are to be specified in a configuration file. A sample configuration file is provided, called "sample.multiPhate.config". Make a copy of this file and rename it accordingly (eg., myGenomeSet_multiPhate.config). Hereafter we refer to this file as, multiPhate.config. The multiPhate.config file is configured according to established default parameters (just about everything turned off initially). Any of the parameters may be modified (switches turned on or off) by assigning 'true' or 'false'. It is suggested that you turn swithes off, then install each supporting gene finder and database in turn and test the pipeline.
@@ -83,12 +83,12 @@ For each database that you have in-house, specify the full path/filename. Note t
 You may up- or down-regulate verbosity in the multiPhate.config file, under "# VERBOSITY". This includes an option to clean the (voluminous) raw blast and hmm search data from the output directories. It is suggested that clean_raw_data, phate_progress, and cgc_progress be set to 'true'. The warnings and messages, when set to 'true', will generate voluminous output; set these to 'true' when trouble-shooting the pipeline.
 
 
-PIPELINE EXECUTION
+###PIPELINE EXECUTION
 
 Run the PhATE pipeline at the command line by passing your multiPhate.config file as an argument to the multiPhate.py pipeline driver script, as follows: $ python multiPhate.py multiPhate.config
 
 
-SUPPORTING DATABASES
+###SUPPORTING DATABASES
 
 It is recommended that the user acquire as many of the following sequence databases and associated codes as is feasible, although none are actually required to run the code. (You may specify "translate_only='true'" to do gene finding then translation, and then stop at that point.) Databases are listed with at least one way of acquiring them, but there may be additional sources, and it is possible to substitute subsets of blast databases (e.g., a subset of the NCBI gene database in place of Refseq Gene).
 
@@ -139,7 +139,7 @@ Databases/
 You must specify in your multiPhate.config file the locations of the data sets that you will be using. Although it is recommended that you place your databases in the above directory structure, they can reside anywhere locally on disk, but in any case you must specify the full directory path/filename to a given resource in your multiPhate.config file.
 
 
-SUPPORTING 3rd PARTY CODES
+###SUPPORTING 3rd PARTY CODES
 
 Note that some third-party codes are required for multiPhATE, but others are optional, as indicated below. Some of these codes can be installed in a Conda environment. Codes that can be installed via Conda are so indicated below. If using Conda for installation of multiPhATE, these codes should have come along with the installation of multiPhATE. (It is of course possible to install these codes following the instructions provided with each package from the source, as listed below.)
 
@@ -163,8 +163,7 @@ tRNAscan-SE - https://www.eddylab.org/software.html - select tRNAscan-SE downloa
 
 Third-party codes should be installed globally whenever possible. However, it is recommended that PHANOTATE be installed under the ExternalCodes/ subdirectory in the execution/working directory. (The ExternalCodes/ subdirectory should already exist in the multiPhATE distribution, with PHANOTATE for Python 3.x in that location.)
 
-
-PHATE PIPELINE OUTPUT FILES 
+###PHATE PIPELINE OUTPUT FILES 
 
 In the user-specified output directory (<genomeDir>), under PipelineOutput/, the following files will be written:
 
@@ -190,13 +189,11 @@ log files capturing details of the processing and time stamps
 
 The auto-generated myGenomeName_phate.config file, to record exactly how you configured the pipeline for the current run (genome).
 
-
-RUNNING PHATE AS AN "EMBARASSINGLY PARALLEL" CODE
+###RUNNING PHATE AS AN "EMBARASSINGLY PARALLEL" CODE
 
 Pipeline outputs are written to user-specified output subdirectories (specified in your multiPhate.config file, and in the auto-generated myGenomeName_phate.config files, one for each genome). In this way, multiPhATE may be set up to run in parallel on any number of nodes of a compute cluster without fear of clashes in writing results. Implementing a code in parallel is system dependent; a parallel version of multiPhATE is not provided in the distribution. In the case that you have programming expertise at hand, parallelization should be implemented within the multiPhate.py script, upon execution of phate_runPipeline.py over the list of genomes. 
 
-
-FURTHER RECOMMENDATIONS
+###FURTHER RECOMMENDATIONS
 
 PhATE was originally developed for anotating phage genome sequences. However, PhATE may also be useful in helping to identify phage genes within bacterial genomes (i.e., prophage). Thus, the user has the option of running multiple gene callers for bacterial genome sequence (GeneMarkS, Glimmer, Prodigal) and a new gene finder specifically for phage (PHANOTATE). The calls from any two or more of these callers are compared by the PhATE/CGC code so that the user can examine the calls that agree or disagree among the callers, and then run PhATE again, selecting the caller of choice for annotating the sequence.
 
@@ -206,8 +203,7 @@ The NR database has grown enormously large. It is recommended to use a smaller d
 
 Because the behavior of 3rd party codes can sometimes be unpredictable, it is recommended that the user replace spaces and unusual characters in their fasta headers with the underscore character.
 
-
-PLANNED FURTHER DEVELOPMENT
+###PLANNED FURTHER DEVELOPMENT
 
 Plans include adding additional functionality to the pipeline:
 1) Adding HMMER and additional hmm databases
@@ -215,7 +211,7 @@ Plans include adding additional functionality to the pipeline:
 
 Feel free to report bugs or problems, or to suggest future improvements, by posting an issue on the project github page (click on the Issues tab), or by emailing the developers at:  zhou4@llnl.gov. Thank you for using multiPhATE.
 
-PUBLICATION
+###PUBLICATION
 
 If you use multiPhATE in your research, kindly reference our paper:  "multiPhATE: bioinformatics pipeline for functional annotation of phage isolates", by Carol E Zhou, Stephanie A Malfatti, Jeffrey A Kimbrel, Casandra W Philipson, Katelyn E McNair, Theron C Hamilton, Robert A Edwards, and Brian E Souza. BioRxiv Feb 15, 2019, doi: http://dx.doi.org/10.1101/551010. 
 
