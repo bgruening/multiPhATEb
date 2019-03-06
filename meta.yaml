@@ -1,12 +1,12 @@
 {% set version = "0.5" %}
-{% set sha256 = "75f9f9b84d2cd63e974c61ee3dac57b2a71f163f1288f73ee6e05bbfd71fffb3" %}
+{% set sha256 = "4755c5da28eb692e12b6ef787e46f5386d76d580d4b6f1df149d8372a2367993" %}
 
 package:
   name: multiphate 
   version: '{{ version }}' 
 
 source:
-  url: https://github.com/carolzhou/multiPhATEb/multiphate.tar.gz 
+  git_url: https://github.com/carolzhou/multiPhATEb.git/multiphate.tar.gz 
   sha256: '{{ sha256 }}' 
 
 build:
