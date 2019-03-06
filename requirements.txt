@@ -1,8 +1,0 @@
-emboss
-biopython
-blast
-glimmer
-prodigal
-hmmer
-trnascan_se
-#
