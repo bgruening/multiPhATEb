@@ -1,12 +1,12 @@
 {% set version = "0.5" %}
-{% set sha256 = "abebe1512485f6a2317d0108a18655b56745a692c6073ab6bb5d072e0ac6f501" %}
+{% set sha256 = "75f9f9b84d2cd63e974c61ee3dac57b2a71f163f1288f73ee6e05bbfd71fffb3" %}
 
 package:
   name: multiphate 
   version: '{{ version }}' 
 
 source:
-  url: https://github.com/carolzhou/multiPhATEb/archive/a706cac23339588fe9fa4a34d607fcdcabccfe5a.tar.gz
+  url: https://github.com/carolzhou/multiPhATEb/multiphate.tar.gz 
   sha256: '{{ sha256 }}' 
 
 build:
@@ -32,8 +32,8 @@ test:
     - tRNAscan-SE -h
     - blastp -version
     - prodigal -v
-    - transeq --version
     - jackhmmer -h
+    - transeq --version
 
 about:
   home: https://github.com/carolzhou/multiPhATEb.git
