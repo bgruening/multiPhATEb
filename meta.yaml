@@ -32,8 +32,8 @@ test:
     - tRNAscan-SE -h
     - blastp -version
     - prodigal -v
-    - jackhmmer -h
     - transeq --version
+    - jackhmmer -h
 
 about:
   home: https://github.com/carolzhou/multiPhATEb.git
