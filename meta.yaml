@@ -1,39 +1,41 @@
-{% set version = "0.5" %}
-{% set sha256 = "4755c5da28eb692e12b6ef787e46f5386d76d580d4b6f1df149d8372a2367993" %}
+{% set version = "0.1.0" %}
+{% set sha256 = "" %}
 
 package:
   name: multiphate 
   version: '{{ version }}' 
 
 source:
-  git_url: https://github.com/carolzhou/multiPhATEb.git/multiphate.tar.gz 
+  url: https://github.com/carolzhou/multiPhATEb.git 
   sha256: '{{ sha256 }}' 
 
 build:
   number: 1 
   noarch: python
+  skip: True
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python >=3.0
+    - python
   run:
-    - python >=3.0
+    - python
     - biopython
-    - tRNAscan-SE >=2.0
-    - blast >=2.7.1
-    - glimmer >=3.02
-    - prodigal >=2.6
-    - hmmer >=3.1b2
-    - emboss >=6.6.0
+    - trnascan-se
+    - blast
+    - glimmer3
+    - prodigal
+    - hmmer
+    - emboss
     
 test:
   commands:
-    - tRNAscan-SE -h
+    - trnascan-se -h
     - blastp -version
     - prodigal -v
     - jackhmmer -h
     - transeq --version
+    - python -m multiphate usage
 
 about:
   home: https://github.com/carolzhou/multiPhATEb.git
