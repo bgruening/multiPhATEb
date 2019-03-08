@@ -1,18 +1,17 @@
-{% set version = "0.1.0" %}
-{% set sha256 = "" %}
+{% set version = "v0.1.2" %}
+{% set sha256 = "66aaf71448c044e7dc0f34d1224f7595cbd97059669a1c4cbfd9abd0853d7166" %}
 
 package:
   name: multiphate 
   version: '{{ version }}' 
 
 source:
-  url: https://github.com/carolzhou/multiPhATEb.git 
+  url: https://github.com/carolzhou/multiPhATEb/archive/v0.1.2.tar.gz
   sha256: '{{ sha256 }}' 
 
 build:
   number: 1 
   noarch: python
-  skip: True
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -23,7 +22,7 @@ requirements:
     - biopython
     - trnascan-se
     - blast
-    - glimmer3
+    - glimmer
     - prodigal
     - hmmer
     - emboss
@@ -35,7 +34,7 @@ test:
     - prodigal -v
     - jackhmmer -h
     - transeq --version
-    - python -m multiphate usage
+    - multiphate usage
 
 about:
   home: https://github.com/carolzhou/multiPhATEb.git
