@@ -29,9 +29,9 @@ First, create a working directory on your computer for running multiPhATE. Then,
 3) Add the following channels:  
 
     ```bash
-    $ conda --add channels defaults 
-    $ conda --add channels bioconda 
-    $ conda --add channels conda-forge 
+    $ conda config --add channels defaults 
+    $ conda config --add channels bioconda 
+    $ conda config --add channels conda-forge 
     ```
 
     WARNING: bioconda is supported on Linux and Mac operating systems, but so far not on Windows.  If you are working on a Windows machine, then you will instead need to install multiPhATE from the following repository:  https://github.com/carolzhou/multiPhATE.git (note the missing 'b' from the repository name).  Follow the instructions in that repository's README.md file. There will be more manual steps involved in the installation of multiPhATE from this alternate repository, since all of the dependent packages will need to be installed individually from the home website of each package.
